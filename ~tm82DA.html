@@ -30,33 +30,22 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
 	  <h3>Application For Graphics</h3>
-	  <form name=GFXApp method="post" action="mailto:mpatgfxshop@gmail.com">
-	  Way To Contact You:<br>
-	  <input type="text" name:contact/>
-	  <br>
-	  Minecraft Username:<br>
-	  <input type="text" name:IGN/>
-	  <br>
-	  What would you Like?:<br>
-	  <input type="radio" name:whattheywant value="Render" >Render
-	  <br>
-	  <input type="radio" name:whattheywant value="3D Text">3D Text
-	  <br>
-	  <input type="radio" name:whattheywant value="Avatar">Avatar
-	  <br>
-	  <input type="radio" name:whattheywant value="Banner">Banner
-	  <br>
-	  Font (For 3D Text, Avatar or Banner):<br>
-	   <input type="text" name:Font/>
-	  <br> 
-	  Pose (For Renders on Avatar,Banner & Renders):<br>
-	  <input type="text" name:Pose/>
-	  <br>
-	  Anything else?:<br>
-	   <input type="text" name:other/>
-	  <br>
-	  <input type="submit" name:Submit/> 
-	  </form>
+	  <form id="GFXApp" action="#" method="POST" enctype="multipart/form-data">
+	<div class="row">
+		<label for="name">Your name:</label><br />
+		<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+	</div>
+	<div class="row">
+		<label for="email">Your email:</label><br />
+		<input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+	</div>
+	<div class="row">
+		<label for="message">Your message:</label><br />
+		<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+	</div>
+	<input id="submit_button" type="submit" value="Send email" />
+	<email>\r\nReturn-path: $email"; $subject="GFX Application"; mail("mpatgfxshop@gmail.com", $subject, $message, $from); echo "Email sent!"; } } ?>
+</form>	
 		<h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Portfolio</h3>
 <p>A Render I made for my self</p>

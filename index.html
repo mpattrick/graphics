@@ -30,33 +30,34 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
 	  <h3>Application For Graphics</h3>
-	  <form name=GFXApp method="post" action="mailto:mpatgfxshop@gmail.com">
-	  Way To Contact You:<br>
-	  <input type="text" name:contact/>
-	  <br>
-	  Minecraft Username:<br>
-	  <input type="text" name:IGN/>
-	  <br>
-	  What would you Like?:<br>
-	  <input type="radio" name:whattheywant value="Render" >Render
-	  <br>
-	  <input type="radio" name:whattheywant value="3D Text">3D Text
-	  <br>
-	  <input type="radio" name:whattheywant value="Avatar">Avatar
-	  <br>
-	  <input type="radio" name:whattheywant value="Banner">Banner
-	  <br>
-	  Font (For 3D Text, Avatar or Banner):<br>
-	   <input type="text" name:Font/>
-	  <br> 
-	  Pose (For Renders on Avatar,Banner & Renders):<br>
-	  <input type="text" name:Pose/>
-	  <br>
-	  Anything else?:<br>
-	   <input type="text" name:other/>
-	  <br>
-	  <input type="submit" name:Submit/> 
-	  </form>
+	  <?php
+//if "email" variable is filled out, send email
+  if (isset($_REQUEST['email']))  {
+
+  //Email information
+  $admin_email = "mpatgfxshop@gmail.com";
+  $email = $_REQUEST['email'];
+  $subject = $_REQUEST['subject'];
+  $comment = $_REQUEST['comment'];
+
+  //send email
+  mail($admin_email, "$subject", $comment, "From:" . $email);
+
+  //Email response
+  echo "Thank you for contacting us!";
+  }
+
+  //if "email" variable is not filled out, display the form
+  else  {
+?>
+
+ <form method="post">
+  Email: <input name="email" type="text" /><br />
+  Subject: <input name="subject" type="text" /><br />
+  Message (please give your GFX App Forms):<br />
+  <textarea name="comment" rows="15" cols="40"></textarea><br />
+  <input type="submit" value="Submit" />
+  </form>
 		<h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Portfolio</h3>
 <p>A Render I made for my self</p>
